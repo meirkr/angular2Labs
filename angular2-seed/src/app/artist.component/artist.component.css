@@ -1,0 +1,19 @@
+.artist {
+    color:darkslateblue;
+    font-size: 1ex;
+    font-family: sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div.track{
+    float:left;
+    border: 1px solid blue;
+    border-radius: 1ex;
+    padding: 2ex 2ex;
+    margin: 2ex 2ex;
+    
+}
+

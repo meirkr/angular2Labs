@@ -14,6 +14,8 @@ import { RepoListComponent } from './github/repo-list/repo-list.component';
 import { RepoDetailComponent } from './github/repo-detail/repo-detail.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
+import { ArtistComponent } from './artist.component/artist.component';
+import { ArtistService } from './Services/musicService';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ContactComponent } from './contact/contact.component';
     RepoListComponent,
     RepoDetailComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { ContactComponent } from './contact/contact.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    GithubService
+    GithubService, ArtistService
   ],
   bootstrap: [ AppComponent ]
 })

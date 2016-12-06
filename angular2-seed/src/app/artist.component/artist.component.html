@@ -1,0 +1,33 @@
+<div class="artist"> 
+    <h2>Hello ArtistComponent!</h2> 
+    
+    <ul>
+        <li *ngFor="let track of tracks">
+            <div class="track">
+                <img [src]="track.albumImgUrl" alt="albumImage">    
+                <p> 
+                    Name: {{ track.name }} <br>
+                    Artist: {{ track.artist.name }} <br>
+                    URL: <a [href]="track.url">Click here to listen to song</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<button (click) = "logTracks()">Log Tracks</button>
+
+
+<!--<div>
+
+    
+</div>
+
+
+
+
+
+
+<div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+-->
