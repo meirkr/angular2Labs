@@ -13,7 +13,13 @@ div.track{
     border: 1px solid blue;
     border-radius: 1ex;
     padding: 2ex 2ex;
-    margin: 2ex 2ex;
-    
+    margin: 2ex 2ex; 
 }
 
+div.album{
+    float:left;
+    border: 1px solid lightslategrey;
+    border-radius: 1ex;
+    padding: 2ex 2ex;
+    margin: 2ex 2ex; 
+}

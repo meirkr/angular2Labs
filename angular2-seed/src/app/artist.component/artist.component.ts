@@ -68,11 +68,14 @@ export class ArtistComponent implements OnInit {
 		 console.log("==========> The Error is:", this.errorMessage);
 	 }
 
-	 //Get the image Url from the Json out in the track object
+	 //Get the image Url from the Json out in the track/album object
 	 getImages(list){
 		 list.forEach(listObj => {
-			let imageUrl = listObj.image[2]['#text'];
-			listObj.albumImgUrl = imageUrl;
+			 if (listObj.image[2]['#text'])
+			 	{	
+					let imageUrl = listObj.image[2]['#text'];
+					listObj.albumImgUrl = imageUrl;
+				}	
 		 });
 	 }
 }
