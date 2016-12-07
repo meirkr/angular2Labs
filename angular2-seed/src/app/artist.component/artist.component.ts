@@ -6,7 +6,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 
 import { Artist } from './../api/artist.model';
-import { Track } from './../api/track.model';
+import { Track, Album } from './../api/track.model';
 import { ArtistService } from './../Services/musicService';
 
 @Component({
@@ -21,7 +21,7 @@ export class ArtistComponent implements OnInit {
 	errorMessage: string;
 	selectedTrack: Track;
 	tracks: Track[];
-	imgUrl: string;
+	albums: Album[];
 
 	constructor( private artistService: ArtistService ) {}
 
@@ -30,6 +30,7 @@ export class ArtistComponent implements OnInit {
 			this.artist = new Artist();
 			
 			this.getTracks();
+			this.getAlbums();
 		}
 	 }
 
@@ -40,7 +41,19 @@ export class ArtistComponent implements OnInit {
         	error =>  this.logError(error),
 			() => {
 				console.log("Get Tracks Completed")
-				this.getImages();
+				this.getImages(this.tracks);
+			}
+    	);
+	 }
+
+	 private getAlbums() {
+		this.artistService.getAlbums()
+		.subscribe(
+        	albums => this.albums = albums,
+        	error =>  this.logError(error),
+			() => {
+				console.log("Get Albums Completed")
+				this.getImages(this.albums);
 			}
     	);
 	 }
@@ -56,10 +69,10 @@ export class ArtistComponent implements OnInit {
 	 }
 
 	 //Get the image Url from the Json out in the track object
-	 getImages(){
-		 this.tracks.forEach(track => {
-			let imageUrl = track.image[2]['#text'];
-			track.albumImgUrl = imageUrl;
+	 getImages(list){
+		 list.forEach(listObj => {
+			let imageUrl = listObj.image[2]['#text'];
+			listObj.albumImgUrl = imageUrl;
 		 });
 	 }
 }
