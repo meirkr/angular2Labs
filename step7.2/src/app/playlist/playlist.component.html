@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="offset-sm-1 col-sm-10">
+        <h2>Albums</h2>
+        <div *ngFor="let album of albums" [ngClass]="{ album:true }">
+            <img [src]="album.albumImgUrl" alt="album.name" />
+            <div>
+                <p [title]="album.name"><span>Name:</span>&nbsp;{{album.name | ellipsis:15}}</p>
+                <p *ngIf="album.artist.name === 'The Beatles'"><span>Artist:</span>&nbsp;{{album.artist.name}}</p>
+                <p><span>URL:</span><a [href]="album.url">&nbsp;Click here to listen to Album</a></p>
+            </div>
+        </div>
+    </div>
+</div>
