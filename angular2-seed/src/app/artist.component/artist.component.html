@@ -1,11 +1,11 @@
-<div class="artist"> 
-    <h2>Hello ArtistComponent!</h2> 
-    
+<div class="artist">
+    <h2>Hello ArtistComponent!</h2>
+
     <!--<ul>
         <li *ngFor="let track of tracks">
             <div class="track">
-                <img [src]="track.albumImgUrl" alt="albumImage">    
-                <p> 
+                <img [src]="track.albumImgUrl" alt="albumImage">
+                <p>
                     Name: {{ track.name }} <br>
                     Artist: {{ track.artist.name }} <br>
                     URL: <a [href]="track.url">Click here to listen to song</a>
@@ -17,9 +17,9 @@
     <ul>
         <li *ngFor="let album of albums">
             <div class="album">
-                <img [src]="album.albumImgUrl" alt="albumImage">    
-                <p> 
-                    Name: {{ album.name }} <br>
+                <img [src]="album.albumImgUrl" alt="albumImage">
+                <p>
+                    Name: {{ album.name | capitalize }} <br>
                     Artist: {{ album.artist.name }} <br>
                     URL: <a [href]="album.url">Click here to listen to Album</a>
                 </p>
@@ -34,7 +34,7 @@
 
 <!--<div>
 
-    
+
 </div>
 
 

@@ -16,6 +16,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { ArtistComponent } from './artist.component/artist.component';
 import { ArtistService } from './Services/musicService';
+import {CapitalizePipe} from './artist.component/capitalize.pipe'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ArtistService } from './Services/musicService';
     RepoDetailComponent,
     HomeComponent,
     ContactComponent,
-    ArtistComponent
+    ArtistComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
