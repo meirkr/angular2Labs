@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="offset-sm-1 col-sm-10">
+        <div class="margin10">
+            <h2>Contact Us</h2>
+
+            <div [hidden]="!isSubmitted" class="successMessage">
+                {{successMessage}}
+            </div>
+
+            <div [hidden]="isSubmitted">
+                <form #contactForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+                    <div class="form-content">
+                        <label>Name:</label>
+                        <input type="text" required class="sd-form-control" placeholder="Enter your name" [(ngModel)]="model.name" name="name" #name="ngModel">
+                        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                            <span>Name is required</span>
+                        </div>
+                        <label>Email:</label>
+                        <input type="email" required class="sd-form-control" placeholder="Enter your email" [(ngModel)]="model.email" name="email"
+                            #email="ngModel">
+                        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                            <span> Email is required</span>
+                        </div>
+                        <label>Content:</label>
+                        <textarea required class="sd-form-control" placeholder="Content here" [(ngModel)]="model.content" name="content" #content="ngModel"></textarea>
+                        <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
+                            <span> Content is required</span>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-default" [disabled]="!contactForm.form.valid">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

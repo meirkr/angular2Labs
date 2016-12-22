@@ -2,11 +2,25 @@
   "name": "angular2-seed",
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
+  "config":{"step":1.1},
   "scripts": {
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --progress --port 3000 --content-base src",
-    "start": "npm run server"
+    "server": "webpack-dev-server --inline --progress --port 3000",
+    "start": "npm run server",
+    "start_1.1":"npm run server --angular2-seed:step=1.1",
+    "start_2.1":"npm run server --angular2-seed:step=2.1",
+    "start_2.2":"npm run server --angular2-seed:step=2.2",
+    "start_3.1":"npm run server --angular2-seed:step=3.1",
+    "start_3.2":"npm run server --angular2-seed:step=3.2",
+    "start_4.1":"npm run server --angular2-seed:step=4.1",
+    "start_4.2":"npm run server --angular2-seed:step=4.2",
+    "start_5.1":"npm run server --angular2-seed:step=5.1",
+    "start_5.2":"npm run server --angular2-seed:step=5.2",
+    "start_6.1":"npm run server --angular2-seed:step=6.1",
+    "start_6.2":"npm run server --angular2-seed:step=6.2",
+    "start_7.1":"npm run server --angular2-seed:step=7.1",
+    "start_7.2":"npm run server --angular2-seed:step=7.2"
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
@@ -60,4 +74,5 @@
     "url": "https://github.com/angular/angular2-seed/issues"
   },
   "homepage": "https://github.com/angular/angular2-seed#readme"
+
 }

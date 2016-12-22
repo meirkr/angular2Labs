@@ -1,0 +1,21 @@
+.margin10{
+  margin: 10px;
+}
+
+.form-content {
+  width: 30%;
+}
+.form-content .sd-form-control {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+}
+.form-content textarea.sd-form-control {
+  max-width: 100%;
+}
+.successMessage {
+  color:darkslateblue;
+  font-size: 20px;
+  font-family: monospace;
+}

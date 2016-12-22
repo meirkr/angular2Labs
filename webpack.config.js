@@ -2,22 +2,25 @@ var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
 
+console.log(JSON.stringify(process.env.npm_package_config_step));
 // Webpack Config
+var root = path.join(__dirname,'step'+process.env.npm_package_config_step);
 var webpackConfig = {
   entry: {
-    'main': './src/main.browser.ts',
+    'main': root+'/src/main.browser.ts',
   },
 
   output: {
     publicPath: '',
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(root, 'dist'),
+
   },
 
   plugins: [
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
-      path.resolve(__dirname, './src'),
+      path.resolve(root, './src'),
       {
         // your Angular Async Route paths relative to this root directory
       }
@@ -60,7 +63,8 @@ var defaultConfig = {
 
   devServer: {
     historyApiFallback: true,
-    watchOptions: { aggregateTimeout: 300, poll: 1000 }
+    watchOptions: { aggregateTimeout: 300, poll: 1000 },
+    contentBase: path.resolve(root, './src')
   },
 
   node: {
