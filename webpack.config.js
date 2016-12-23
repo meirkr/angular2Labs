@@ -2,7 +2,6 @@ var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
 
-console.log(JSON.stringify(process.env.npm_package_config_step));
 // Webpack Config
 var root = path.join(__dirname,'step'+process.env.npm_package_config_step);
 var webpackConfig = {
