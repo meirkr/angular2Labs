@@ -1,5 +1,4 @@
-<div class="row">
-    <div class="offset-sm-1 col-sm-10">
+
         <h2>Contact Us</h2>
 
         <div [hidden]="!isSubmitted" class="successMessage">
@@ -19,7 +18,7 @@
                     <input type="email" required class="sd-form-control" placeholder="Enter your email" [(ngModel)]="model.email" name="email"
                     #email="ngModel">
                     <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                    <span> Email is required</span>
+                      <span> Email is required</span>
                     </div>
                     <label>Content:</label>
                     <textarea required class="sd-form-control" placeholder="Content here" [(ngModel)]="model.content" name="content"
@@ -33,5 +32,3 @@
                 </div>
             </form>
         </div>
-    </div>
-</div>

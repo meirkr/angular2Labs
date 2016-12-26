@@ -1,1 +1,29 @@
-<play-list></play-list>
+
+<div class="row ">
+  <div class="col-sm-6" >
+      <div *ngFor="let album of albums">
+        <div class="album" (click)="onAlbumClicked(album)">
+          <img [src]="getImageUrl(album)" alt="{{album.name}}" />
+          <div>
+            <p><span>Name:</span>&nbsp;{{album.name}}</p>
+            <p><span>Artist:</span>&nbsp;{{album.artist.name}}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-sm-6" *ngIf="selectedAlbum" >
+        <div class="album">
+          <button type="button" class="close" aria-label="Close" (click)="selectedAlbum=null">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <img [src]="getImageUrl(selectedAlbum,'extralarge')" alt="Revolver"/>
+          <div>
+            <p><span>Name:</span>&nbsp;{{selectedAlbum.name}}</p>
+            <p><span>Artist:</span>&nbsp;{{selectedAlbum.artist.name}}</p>
+            <p><span>Play Count: {{selectedAlbum.playcount}}</span></p>
+            <p><span>URL:</span><a [href]="selectedAlbum.url">&nbsp;Listen to Album</a></p>
+          </div>
+        </div>
+  </div>
+
+</div>

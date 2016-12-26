@@ -1,28 +1,23 @@
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { PlaylistService } from './playlist/playlist.service';
-import { EllipsisPipe } from './playlist/ellipsis.pipe';
-import { ContactComponent } from './contact/contact.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AlbumsModule} from "./albums/albums.module";
+import {HttpModule} from "@angular/http";
+import {ContactModule} from "./contact/contact.module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlaylistComponent,
-    ContactComponent,
-    EllipsisPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AlbumsModule,
     HttpModule,
-    FormsModule,
-    ReactiveFormsModule
+    ContactModule,
+    FormsModule
   ],
   providers: [
-    PlaylistService
   ],
   bootstrap: [AppComponent]
 })

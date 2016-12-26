@@ -10,7 +10,7 @@ export function main() {
     .catch(err => console.error(err));
 }
 
-// support async tag or hmr
+// support async tag or hmrstep3.1
 switch (document.readyState) {
   case 'interactive':
   case 'complete':

@@ -1,23 +1,18 @@
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { PlaylistService } from './playlist/playlist.service';
-import { EllipsisPipe } from './playlist/ellipsis.pipe'; 
+import {AlbumsModule} from "./albums/albums.module";
+import {HttpModule} from "@angular/http";
+import {SharedModule} from "./common/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlaylistComponent,
-    EllipsisPipe
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule
+    BrowserModule,AlbumsModule,HttpModule
   ],
   providers: [
-    PlaylistService
   ],
   bootstrap: [AppComponent]
 })

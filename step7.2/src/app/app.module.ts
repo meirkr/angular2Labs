@@ -1,34 +1,25 @@
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-import { RouterConfig } from './routerConfig';
-
-import { NavbarComponent } from './navbar/navbar.component';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { ContactComponent } from './contact/contact.component';
-import { PlaylistService } from './playlist/playlist.service';
-import { EllipsisPipe } from './playlist/ellipsis.pipe';
+import {AlbumsModule} from "./albums/albums.module";
+import {HttpModule} from "@angular/http";
+import {ContactModule} from "./contact/contact.module";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app.routing";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PlaylistComponent,
-    NavbarComponent,
-    ContactComponent,
-    EllipsisPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AlbumsModule,
     HttpModule,
+    ContactModule,
     FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(RouterConfig)
+    AppRoutingModule
   ],
   providers: [
-    PlaylistService
   ],
   bootstrap: [AppComponent]
 })

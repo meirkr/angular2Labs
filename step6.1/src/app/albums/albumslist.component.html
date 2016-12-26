@@ -1,0 +1,9 @@
+<div *ngFor="let album of albums">
+  <div class="album" (click)="onClick(album)">
+    <img [src]="albumService.getImageUrl(album)" alt="{{album.name}}" />
+    <div>
+      <p><span>Name:</span>&nbsp;{{album.name | ellipsis:8}}</p>
+      <p><span>Artist:</span>&nbsp;{{album.artist.name}}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="album" *ngIf="selectedAlbum">
+  <img [src]="albumService.getImageUrl(selectedAlbum,'extralarge')" alt="Revolver"/>
+  <div>
+    <p><span>Name:</span>&nbsp;{{selectedAlbum.name | ellipsis:20}}</p>
+    <p><span>Artist:</span>&nbsp;{{selectedAlbum.artist.name}}</p>
+    <p><span>Play Count: {{selectedAlbum.playcount}}</span></p>
+    <p><span>URL:</span><a [href]="selectedAlbum.url">&nbsp;Listen to Album</a></p>
+  </div>
+</div>
