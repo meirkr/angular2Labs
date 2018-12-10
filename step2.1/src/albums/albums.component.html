@@ -1,0 +1,14 @@
+<h1>Meir's albums:</h1>
+
+<div class="row">
+            
+    <div class="column">
+        <ul>
+            <li *ngFor="let album of albums">
+                <div  (click)="notifyAlbumClicked(album)">
+                    <img src={{album.image[1]?.text}} /> {{album.name}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

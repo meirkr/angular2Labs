@@ -2,7 +2,7 @@
   "name": "angular2-seed",
   "version": "1.0.0",
   "description": "A simple starter Angular2 project",
-  "config":{"step":1.1},
+  "config":{"step":2.1},
   "scripts": {
     "build": "webpack --progress",
     "watch": "npm run build -- --watch",

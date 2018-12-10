@@ -1,12 +1,12 @@
 import './polyfills.browser';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { Our1stModule } from './app/app.module';
 
 export const platformRef = platformBrowserDynamic();
 
 export function main() {
-  return platformRef.bootstrapModule(AppModule)
+  return platformRef.bootstrapModule(Our1stModule)
     .catch(err => console.error(err));
 }
 
