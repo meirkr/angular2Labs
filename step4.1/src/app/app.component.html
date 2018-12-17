@@ -1,7 +1,7 @@
 
 <div class="row ">
   <div class="col-sm-6" >
-      <albums-list [albums]="albums" (albumClicked)="onAlbumClicked($event)"></albums-list>
+      <albums-list (albumClicked)="onAlbumClicked($event)"></albums-list>
   </div>
   <div class="col-sm-6" *ngIf="selectedAlbum" >
       <album-details [selectedAlbum]="selectedAlbum" ></album-details>

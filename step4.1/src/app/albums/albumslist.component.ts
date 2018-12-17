@@ -1,5 +1,6 @@
 import {Component, Input, EventEmitter, OnInit, Output} from "@angular/core";
 import {Album} from "../common/album.model";
+import { AlbumsService } from "./albums.service";
 
 
 @Component({
@@ -9,14 +10,13 @@ import {Album} from "../common/album.model";
 })
 export class AlbumsListComponent implements OnInit{
 
-  @Input()
   private albums:Album[];
 
   @Output()
   private albumClicked:EventEmitter<Album>;
 
-  constructor(){
-      this.albums=[];
+  constructor(albumsService:AlbumsService){
+      this.albums=albumsService.getAlbums();
       this.albumClicked=new EventEmitter<Album>();
   }
 
