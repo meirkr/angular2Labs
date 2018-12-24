@@ -15,12 +15,13 @@ export class AlbumsListComponent implements OnInit{
   @Output()
   private albumClicked:EventEmitter<Album>;
 
-  constructor(albumsService:AlbumsService){
-      this.albums=albumsService.getAlbums();
+  constructor(private albumsService:AlbumsService){
       this.albumClicked=new EventEmitter<Album>();
   }
 
   ngOnInit(){
+    this.albums = [];
+    this.albumsService.getAlbums().subscribe(o => this.albums = this.albums.concat(o));
 
   }
   onClick(album){

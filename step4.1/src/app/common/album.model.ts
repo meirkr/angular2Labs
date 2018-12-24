@@ -1,10 +1,10 @@
 export class ImageObject {
-  "#text": string;
+  '#text': string;
   size: string;
 }
 
 export class Album {
-  mbid: string;
+  mbid?: string;
   name: string;
   url: string;
   artist: Artist;
@@ -13,7 +13,7 @@ export class Album {
 }
 
 export class Artist {
-  mbid: string;
+  mbid?: string;
   name: string;
   url: string;
 }
